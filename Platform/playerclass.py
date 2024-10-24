@@ -8,7 +8,7 @@ class Player(py.sprite.Sprite):
         super().__init__( groups)
         self.frames = frames
         self.frames_index = 0
-        self.image = py.image.load(join('GAMEJAM','Platform','images','player', '0.png')).convert_alpha()
+        self.image = py.image.load(join('Platform','images','player', '0.png')).convert_alpha()
         self.rect = self.image.get_frect(center= (sizex/2, sizey/2))
         self.direction = py.math.Vector2(0,0)
         self.speed = 300
@@ -45,7 +45,7 @@ class Game:
         py.display.set_caption("jogo da lua")
         self.Clock = py.time.Clock()
 
-        player_frames = [py.image.load(join('GAMEJAM','Platform','images','player', f'{i}.png')).convert_alpha() for i in range(3)]
+        player_frames = [py.image.load(join('Platform','images','player', f'{i}.png')).convert_alpha() for i in range(3)]
 
         #sprites objects
         self.all_sprites = py.sprite.Group()
