@@ -16,7 +16,10 @@ class Player(py.sprite.Sprite):
     def update(self, dt):
         keys = py.key.get_pressed()
         self.direction.x = int(keys[py.K_d] or keys[py.K_RIGHT]) - int(keys[py.K_a] or keys[py.K_LEFT])
-        self.direction.y = int(keys[py.K_s] or keys[py.K_DOWN]) - int (keys[py.K_w] or keys[py.K_UP])
+        self.direction.y = int(keys[py.K_s] or keys[py.K_DOWN]) - int (keys[py.K_w] or keys[py.K_UP]) 
+        if self.rect.midbottom[1]  < 720:
+            self.direction.y += 1
+
 
         if self.direction.y:
             self.frames_index += 20 * dt
