@@ -21,7 +21,7 @@ class Player(py.sprite.Sprite):
             self.direction.y += 1
 
 
-        if self.direction.y:
+        if self.direction.x:
             self.frames_index += 20 * dt
             if self.frames_index < len(self.frames):
                 self.image = self.frames[int(self.frames_index)]
